@@ -14,6 +14,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= image_tag(article.image.url, size: "250x150") if article.image? %></td>
         <td><%= article.title %> By (<%= article.user.name %>)</td>
         <td><%= article.body %></td>
         <td><%= link_to 'Show', article %></td>

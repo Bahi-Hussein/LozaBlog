@@ -19,4 +19,18 @@ class Article < ActiveRecord::Base
 	def dislikes_total
 		self.likes.where(like: false).size
 	end
+
+
+	#for carrierwave
+	mount_uploader :image, ImageUploader
+
+	#image validation
+	validate :image_size
+
+	private 
+		def image_size
+			if image.size > 5.megabytes
+				error.add(:image, "should be lessthan 5MB")
+			end 
+		end
 end

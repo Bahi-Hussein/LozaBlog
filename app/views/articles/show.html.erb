@@ -1,35 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-		<% if @article.image? %>
-		    <div class="picture">
-		        <div class="profile-pic">
-		          <%= link_to('') do %>
-		            <img src="img/person.png">
-		            <h2><%= @article.user.name %></h2>
-		          <% end %>
-		        </div>
+		<div class="blog">
 
-		        <%= image_tag(@article.image.url, class: "background-img")%>
-		    </div>
-		<% end %>
+        <% if @article.image? %>
+        <div class="picture">
+            <div class="profile-pic">
+              <%= link_to('') do %>
+                <img src="img/person.png">
+                <h2><%= @article.user.name %></h2>
+              <% end %>
+            </div>
 
-      <div class="blog">
-          <h1><%= link_to @article.title %></h1>
-          <p><%= simple_format(@article.body) %></p>
-          <div class="div-btn">
-            <%= render @article.tags %>
-          </div>
-          <div class="blog-border"></div>
+            <%= image_tag(@article.image.url, class: "background-img")%>
+            </div>
+          <% end %>
+          
+        
+          <div class="blog-text">
+            <div class="blog-title">
+               <h1><%= @article.title %></h1>
+            </div>
+            <div class="blog-body">
+              <p><%= simple_format(@article.body) %></p>
+            </div>
+          
 
-          <div class="stat">
-            <a href="#" class="stat-left"><%= @article.created_at %></a>
+            <div class="tag-btns">
+               <%= render @article.tags %>
+            </div>
+
+            <hr class="blog-border">
+
+            <div class="stat">
+              <a href="#" class="stat-left"><%= @article.created_at %></a>
             <%= link_to(like_article_path(@article, like: true), method: :post, class: "stat-right") do %> <i class="fa  fa-heart-o"></i> <%= @article.likes_total %> likes <% end %>
-            
-         </div>
-         <% if logged_in? %>
-         <p>
-           <%= link_to 'Edit', edit_article_path(@article) %>
-          <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
-         </p>
+            </div>
+
+            <% if logged_in? %>
+            <div class="options-bar">
+             <p>
+               <%= link_to 'Edit', edit_article_path(@article) %>
+              <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+             </p>
+             </div>
          <% end %>
-      </div>
+          
+          </div>
+
+        </div>

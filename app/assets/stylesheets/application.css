@@ -1,3 +1,8 @@
+/* ...
+*= require_tree .
+*= require_self
+*= require font-awesome
+*/
 
 /******************************************************
 GENERAL SELECTORS
@@ -103,7 +108,7 @@ CLASS SELECTORS : Right Side;
 
 .blog {
 	width: 100%;
-	height: 800px;
+	margin-bottom: 50px;
 }
 
 .blog-text {
@@ -111,7 +116,6 @@ CLASS SELECTORS : Right Side;
 	width: 100%;
 	height: 50%;
 	margin-top: 0;
-	margin-bottom: 0;
 	position: relative;
 
 }
@@ -193,6 +197,7 @@ iframe {
 
 .tag-btns {
 	padding: 10px 30px 20px 50px;
+	margin-bottom: 30px;
 }
 
 
@@ -211,24 +216,27 @@ iframe {
 }
 
 .blog-border {
-	width: 90%;
-	margin: 15px auto;
+	display: block !important;
+	width: 90% !important;
+	margin: 15px auto !important;
 }
 
 .stat {
-	padding: 10px 30px 0 50px;
-	position: absolute;
-	bottom: 20px;
+	width: 100%;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-bottom: 40px;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .stat-left {
 	float: left;
-	margin-right: 280px;
 }
 
 .stat-right {
 	float: right;
-	margin-left: 10px;
 }
 
 .stat a {
@@ -382,6 +390,21 @@ iframe {
 	text-transform: uppercase;
 }
 
+.options-bar {
+	padding: 20px 30px;
+	background: #696969;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+.options-bar a {
+	color: white;
+	padding: 7px;
+	background-color: red;
+	border-radius: 5px;
+}
+
 /******************************************************
 MEDIA QUERIES
 ******************************************************/
@@ -396,14 +419,11 @@ MEDIA QUERIES
 	}
 
 	.stat {
-		padding: 0 7px 0 7px;
-		font-size: 0.7em;
-		position: static;
+		font-size: 0.9em;
 	}
 	
 	.stat-hover {
-		padding: 0 7px 0 7px;
-		font-size: 0.7em;
+		font-size: 0.9em;
 	
 	}
 
@@ -449,14 +469,11 @@ MEDIA QUERIES
 	}
 
 	.stat {
-		padding: 0 7px 0 7px;
-		font-size: 0.7em;
-		position: static;
+		font-size: 0.9em;
 	}
 	
 	.stat-hover {
-		padding: 0 7px 0 7px;
-		font-size: 0.7em;
+		font-size: 0.9em;
 	
 	}
 
@@ -500,6 +517,8 @@ MEDIA QUERIES
 		margin-right: 1px;
 	}
 }
+
+
 
 
 

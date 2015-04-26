@@ -1,10 +1,60 @@
-<h1> LozaBlog </h1>
 
-<%= link_to "Articles", articles_path %>
-<%= link_to "Users", users_path %>
-<% if logged_in? %>
-	<%= link_to "Logout", logout_path %>
-<% else %>
-	<%= link_to "Login", login_path %>
-	<%= link_to "Sign Up", register_path %>
-<% end %>
+				
+<div class="section group">
+
+	<div class="col span_1_of_1">
+		<%= link_to "Loza Blog", root_path, class: "title" %>	
+		<div class="title-border"></div>
+	</div>
+</div>
+
+<div class="section group">
+
+	<div class="col span_1_of_1">
+		<p class="content">A simple, notebook inspired, theme for Ghost. Includes four colour schemes to kick start your customisation.
+		</p>
+		<div class="content-border"></div>
+
+	</div>
+</div>
+
+<div class="section group">
+
+	<div class="col span_1_of_1">
+		<ul class="nav">
+			<% if logged_in? %>
+			<li><%= link_to "New Article", new_article_path %> 
+			<% end %>
+
+			<li><%= link_to "Articles", articles_path %></li>
+			<li><%= link_to "Users", users_path %>
+
+			<% if logged_in? %></li>
+				<li><%= link_to "Logout", logout_path %></li>
+			<% end %>
+
+			<% if !logged_in? %>
+				<li><%= link_to "Login", login_path %></li>
+				<li><%= link_to "Sign Up", register_path %></li>
+				</li>
+			<% end %>
+		</ul>
+		<div class="nav-border"></div>
+	</div>
+</div>
+
+<div class="section group">
+
+	<div class="col span_1_of_1 social-links">
+		<a href="#"><i class="fa fa-twitter"></i></a>
+		<a href="#"><i class="fa fa-github"></i></a>
+		<a href="#"><i class="fa fa-dribbble"></i></a>
+	</div>
+</div>
+
+<div class="section group">
+
+	<div class="col span_1_of_1 copyright">
+		<a href="www.zulucoding.com">blog by zulucoding</a>		
+	</div>
+</div>

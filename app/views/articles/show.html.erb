@@ -1,14 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+		<% if @article.image? %>
+		    <div class="picture">
+		        <div class="profile-pic">
+		          <%= link_to('') do %>
+		            <img src="img/person.png">
+		            <h2><%= @article.user.name %></h2>
+		          <% end %>
+		        </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+		        <%= image_tag(@article.image.url, class: "background-img")%>
+		    </div>
+		<% end %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+      <div class="blog">
+          <h1><%= link_to @article.title %></h1>
+          <p><%= simple_format(@article.body) %></p>
+          <div class="div-btn">
+            <%= render @article.tags %>
+          </div>
+          <div class="blog-border"></div>
+
+          <div class="stat">
+            <a href="#" class="stat-left"><%= @article.created_at %></a>
+            <%= link_to(like_article_path(@article, like: true), method: :post, class: "stat-right") do %> <i class="fa  fa-heart-o"></i> <%= @article.likes_total %> likes <% end %>
+            
+         </div>
+         <% if logged_in? %>
+         <p>
+           <%= link_to 'Edit', edit_article_path(@article) %>
+          <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+         </p>
+         <% end %>
+      </div>

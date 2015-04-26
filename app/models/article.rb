@@ -7,8 +7,8 @@ class Article < ActiveRecord::Base
 	belongs_to :user
 	has_many :likes
 	
-	validates :title, presence: true, length:{minimum: 10, maximum: 50}
-	validates :body, presence: true, length:{minimum: 25, maximum: 800}
+	validates :title, presence: true, length:{minimum: 10, maximum: 200}
+	validates :body, presence: true, length:{minimum: 25, maximum: 1500}
 
 	validates :user_id, presence: true
 

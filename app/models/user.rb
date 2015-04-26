@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	
 	has_many :articles, dependent: :destroy
-	has_many :likes
+	belongs_to :role
 
 	validates :name, presence: true, length:{minimum: 3, maximum: 25}
 	validates :desc, length:{minimum: 15, maximum: 100 }

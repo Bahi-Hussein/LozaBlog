@@ -1,35 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% @articles.each do |article| %>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= image_tag(article.image.url, size: "250x150") if article.image? %></td>
-        <td><%= article.title %> By (<%= article.user.name %>)</td>
-        <td><%= article.body %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "Like", like_article_path(article, like: true), method: :post %></td>
-        <td>likes: <%= article.likes_total %></td>
-        <td>Dislikes: <%= article.dislikes_total %> </td>
-      </tr>
-      <tr><%= render article.tags %></tr>
-    <% end %>
-  </tbody>
-</table>
+      <% if article.image? %>
+        <div class="picture">
+            <div class="profile-pic">
+              <%= link_to('') do %>
+                <img src="img/person.png">
+                <h2><%= article.user.name %></h2>
+              <% end %>
+            </div>
 
-<br>
+            <%= image_tag(article.image.url, class: "background-img")%>
+        </div>
+      <% end %>
 
-<%= link_to 'New Article', new_article_path %>
-<%= link_to 'Home', root_path %>
+      <div class="blog">
+          <h1><%= link_to article.title, article %></h1>
+          <p><%= truncate(article.body, length: 300 ) %></p>
+          <div class="div-btn">
+            <%= render article.tags %>
+          </div>
+          <div class="blog-border"></div>
+
+          <div class="stat">
+            <a href="#" class="stat-left"><%= article.created_at %></a>
+            <%= link_to(like_article_path(article, like: true), method: :post, class: "stat-right") do %> <i class="fa  fa-heart-o"></i> <%= article.likes_total %> likes <% end %>
+            
+         </div>
+         <% if logged_in? %>
+         <p>
+           <%= link_to 'Edit', edit_article_path(article) %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+         </p>
+         <% end %>
+      </div>
+
+  <% end %>
+

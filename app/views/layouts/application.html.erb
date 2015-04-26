@@ -7,14 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/nav' %>
-<hr/>
-<%= render 'layouts/messages' %>
 
+	<div class="wrapper">
+			
+			<div class="section group">
 
-<%= yield %>
+				<div class="col span_1_of_3">
+				<div class="section group">
+				<!-- LEFT SIDE -->
+				<%= render 'layouts/nav' %>
+				</div>
+				</div>
 
-<%= render 'layouts/footer' %>
+				<!-- RIGHT SIDE -->
+				<div class="col span_2_of_3">
+				<div class="section group">
+				<%= render 'layouts/messages' %>
+				<%= yield %>
+				</div>
+				</div>
+
+			</div>
+
+			<%= render 'layouts/footer' %>
+
+	</div>
 
 </body>
 </html>

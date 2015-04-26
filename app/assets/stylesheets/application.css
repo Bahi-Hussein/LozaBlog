@@ -1,15 +1,505 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+/******************************************************
+GENERAL SELECTORS
+******************************************************/
+
+body {
+	background: #dcdcdc;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/******************************************************
+CLASS SELECTORS : Left Side;
+******************************************************/
+
+.head {
+	width: 100%;
+	height: 120px;
+}
+
+.wrapper {
+	width: 90%;
+	margin: 50px auto;
+}
+
+.title {
+	color: black;
+	font-size: 2em;
+	line-height: 1.5;
+	margin: 15px;
+	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+}
+
+.title-border {
+	margin: 15px;
+}
+
+.content {
+	color: #808080;
+	line-height: 1.5;
+	margin: 15px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.9em;
+	font-weight: lighter;
+}
+
+.content-border {
+	width: 15%;
+	margin: 15px;
+}
+
+.nav {
+	margin: 15px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.9em;
+}
+
+.nav a {
+	color: #808080;
+}
+
+.nav-border {
+	width: 10%;
+	margin: 15px;
+}
+
+.social-links a {
+	margin: 15px 5px 15px 15px;
+	color: #696969;
+}
+
+.copyright {
+	text-transform: uppercase;
+	margin: 15px;
+}
+
+.copyright a {
+	margin: 15px;
+	color: #c0c0c0;
+	font-weight: lighter;
+	font-size: 0.8em;
+	font-family: 'Raleway', sans-serif;
+	line-height: 1.5;
+}
+
+.copyright a:hover {
+	color: #808080;
+}
+
+/******************************************************
+CLASS SELECTORS : Right Side;
+******************************************************/
+
+.blog {
+	width: 100%;
+	height: 800px;
+}
+
+.blog-text {
+	background: white;
+	width: 100%;
+	height: 50%;
+	margin-top: 0;
+	margin-bottom: 0;
+	position: relative;
+
+}
+
+.picture {
+	width: 100%;
+	height: 50%;
+	margin-bottom: 0;
+	margin-top: 0;
+
+}
+
+.blog-title h1{
+	font-size: 2em;
+	font-weight: lighter;
+	line-height: 1.5;
+	padding: 15px 30px 15px 50px;
+	margin: 0;
+}
+
+.blog-title a {
+	color: black;
+}
+
+.blog-body {
+	padding: 10px 30px 10px 50px;
+	line-height: 1.5;
+	font-weight: lighter;
+	font-size: 1em;
+	font-family: 'Raleway', sans-serif;
+	color: #808080;
+}
+
+.picture > img {
+	border-radius: 8px 8px 0 0;
+	max-width: 100%;
+}
+
+.profile-pic {
+	width: 20%;
+	height: 10%;
+	margin: 30px 15px 15px 15px;
+	position: absolute;
+	z-index: 2;
+}
+
+.profile-pic img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid white;
+	margin-left: 15px;
+	float: left;
+}
+.profile-pic h2 {
+	color: white;
+	font-size: 0.9em;
+	float: left;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 5px;
+	text-transform: uppercase;
+	font-weight: lighter;
+
+}
+.background-img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border-radius: 8px;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+
+.tag-btns {
+	padding: 10px 30px 20px 50px;
+}
+
+
+.btn {
+	background: none;
+	text-transform: uppercase;
+	border: 1px solid #c0c0c0;
+	padding: 7px;
+	font-weight: lighter;
+	font-size: 0.7em;
+	color: #c0c0c0;
+	margin-right: 6px;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.blog-border {
+	width: 90%;
+	margin: 15px auto;
+}
+
+.stat {
+	padding: 10px 30px 0 50px;
+	position: absolute;
+	bottom: 20px;
+}
+
+.stat-left {
+	float: left;
+	margin-right: 280px;
+}
+
+.stat-right {
+	float: right;
+	margin-left: 10px;
+}
+
+.stat a {
+	color: #c0c0c0;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	font-weight: lighter;
+	padding-right: 10px;
+	line-height: 1.5;
+}
+
+.stat-left-hover {
+	float: left;
+
+}
+
+.stat-right-hover {
+	float: right;
+
+}
+
+.div-hover {
+	width: 100%;
+	height: 290px;
+	margin-top: 15%;
+	margin-bottom: 15%;
+	position: relative;
+}
+
+.left-box {
+	float: left;
+	width: 40%;
+	height: 100%;
+	margin-right: 10%;
+	position: relative;
+	white-space: nowrap;
+}
+.left-box img {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+}
+.left-box-hover {
+	float: left;
+	width: 100%;
+	height: 100%;
+	margin-right: 10%;
+	background: rgba(0,0,0,0.4);
+	position: absolute;
+	border-radius: 8px;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+    top: 0;
+    left: 0;
+	z-index: 2;
+}
+
+.stat-hover {
+	width: 100%;
+	height: 15%;
+	position: absolute;
+	bottom: 0;
+}
+
+.stat-hover a {
+	color: #c0c0c0;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	font-weight: lighter;
+	padding-right: 10px;
+	padding-left: 10px;
+	line-height: 1.5;
+}
+
+.right-box {
+	float: right;
+	width: 40%;
+	height: 100%;
+	margin-left: 5%;
+	position: relative;
+	white-space: nowrap;
+}
+
+.right-box img {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+}
+
+.right-box-hover {
+	float: right;
+	width: 100%;
+	height: 100%;
+	margin-left: 5%;
+	background: rgba(0,0,0,0.4);
+	border-radius: 8px;
+	position: absolute;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	top: 0;
+    right: 0;
+	z-index: 2;
+}
+
+/*.blog-pic {
+	width: 30%;
+	height: 10%;
+	margin: 30px 15px 15px 15px;
+}
+
+.blog-pic img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid white;
+	margin-left: 15px;
+	float: left;
+}
+.blog-pic h2 {
+	color: #c0c0c0;
+	font-size: 0.9em;
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 5px;
+	text-transform: uppercase;
+	font-weight: lighter;
+}*/
+
+.heart:hover {
+	color: red;
+}
+
+.msg {
+	width: 100%;
+	height: 50px;
+	background: #c0c0c0;
+	border-radius: 8px;
+	margin-bottom: 5px;
+}
+
+.msg p {
+	color: #800000;
+	font-size: 0.9em;
+	text-align: center;
+	padding: 20px;
+	text-transform: uppercase;
+}
+
+/******************************************************
+MEDIA QUERIES
+******************************************************/
+
+@media screen and (max-width: 963px) and (min-width: 700px) {
+
+	
+	.sign-div,
+	.login-div {
+		width: 100%;
+		
+	}
+
+	.stat {
+		padding: 0 7px 0 7px;
+		font-size: 0.7em;
+		position: static;
+	}
+	
+	.stat-hover {
+		padding: 0 7px 0 7px;
+		font-size: 0.7em;
+	
+	}
+
+	.left-box,
+	.right-box {
+		width: 47%;
+		position: relative;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.div-hover {
+		margin-bottom: 400px;
+	}
+
+	.blog-text {
+		overflow: auto;
+	}
+	.profile-pic {
+		width: 100%;
+	}
+	.blog-pic {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.left-box-hover,
+	.right-box-hover {
+		width: 100%;
+		clear: both;
+		margin: 0;
+	}
+
+}
+
+@media screen and (max-width: 699px) {
+
+	.sign-div,
+	.login-div {
+		width: 100%;
+		
+	}
+
+	.stat {
+		padding: 0 7px 0 7px;
+		font-size: 0.7em;
+		position: static;
+	}
+	
+	.stat-hover {
+		padding: 0 7px 0 7px;
+		font-size: 0.7em;
+	
+	}
+
+	.stat-left,
+	.stat-right {
+		margin: 0;
+	}
+
+	.left-box,
+	.right-box {
+		width: 100%;
+		clear: both;
+		position: relative;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.div-hover {
+		margin-bottom: 400px;
+	}
+
+	.blog-text {
+		overflow: auto;
+	}
+	.profile-pic {
+		width: 100%;
+	}
+	.blog-pic {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.left-box-hover,
+	.right-box-hover {
+		width: 100%;
+		clear: both;
+	}
+
+	.btn {
+		margin-right: 1px;
+	}
+}
+
+
+
